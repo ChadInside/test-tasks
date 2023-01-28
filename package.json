@@ -1,0 +1,20 @@
+{
+  "name": "test-tasks",
+  "version": "1.0.0",
+  "description": "Various tasks recieved from different companies as part of hiring procedure",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChadInside/test-tasks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChadInside/test-tasks/issues"
+  },
+  "homepage": "https://github.com/ChadInside/test-tasks#readme"
+}

@@ -9,22 +9,49 @@
 + 3 балла Поддержка ссылочных типов
  */
 
-/** 
- * const map = new IncrementalMap();
+import assert from 'assert'
 
-map.set('a', 10);
-map.set('b', 10);
-// map.get('a') === 10
-// map.get('b') === 10
+class IncrementalMap {
+  constructor() {
+    this.map = new Map()
+    this.superMap = new Map()
 
-map.snapshot(1);
+  }
 
-map.set('a', 20);
-// map.get('a') === 20
-// map.get('b') === 10
+  set(key, value) {
+    this.map.set(key, value)
+    this.map.forEach((key, value)=> {
+      console.log(key, ",: ", value)
+      console.log(this.map.get(key))
+    })
+  }
+  get(key) {
+    this.map.get(key)
+  }
+  snapshot(milestone) {
+    this.superMap.set(milestone, this.map)
+  }
+  loadSnapshot(milestone) {
+    this.map = this.superMap.get(milestone)
+  }
+}
 
-map.loadSnapshot(1);
-// map.get('a') === 10
-// map.get('b') === 10
- */
+
+const map = new IncrementalMap()
+
+map.set('a', 10)
+map.set('b', 10)
+assert.equal(map.get('a'), 10)
+assert.equal(map.get('b'), 10)
+
+map.snapshot(1)
+
+map.set('a', 20)
+assert.equal(map.get('a'), 20)
+assert.equal(map.get('b'), 10)
+
+map.loadSnapshot(1)
+assert.equal(map.get('a'), 10)
+assert.equal(map.get('b'), 10)
+
 
