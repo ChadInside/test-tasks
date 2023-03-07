@@ -35,9 +35,7 @@ class IncrementalMap {
       if (this.currentMap.get(this.previousStateSymbol) !== null) {
         return this.#_get(key, this.currentMap.get(this.previousStateSymbol))
       }
-      else {
-        return undefined
-      }
+      return undefined
     }
 
   }
@@ -55,9 +53,7 @@ class IncrementalMap {
       if (map.get(this.previousStateSymbol) !== null) {
         return this.#_get(key, map.get(this.previousStateSymbol))
       }
-      else {
-        return undefined
-      }
+      return undefined
     }
 
   }
@@ -200,21 +196,21 @@ assert.equal(map.get('b'), 10)
 map.loadSnapshot(0)
 map.printCompleteCurrentState()
 
-const array = []
-map.set('a', array)
-map.snapshot(11)
-// const array1 = map.get('a')
-// array1.push('value')
-array.push('value')
-map.snapshot(12)
-map.set('b', 10)
-map.snapshot(13)
-map.set('c', 10)
-map.printCompleteCurrentState()
+// const array = []
+// map.set('a', array)
+// map.snapshot(11)
+// // const array1 = map.get('a')
+// // array1.push('value')
+// array.push('value')
+// map.snapshot(12)
+// map.set('b', 10)
+// map.snapshot(13)
+// map.set('c', 10)
+// map.printCompleteCurrentState()
 
-array.push('value2')
-map.loadSnapshot(13)
-map.printCompleteCurrentState()
+// array.push('value2')
+// map.loadSnapshot(13)
+// map.printCompleteCurrentState()
 
 // map.printCurrentState()
 // map.printCompleteCurrentState()

@@ -1,2 +1,2 @@
 # test-tasks
-Various tasks recieved from different companies as part of hiring procedure
+Various tasks recieved from different companies as part of hiring procedures
