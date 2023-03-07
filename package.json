@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "1": "tsc-watch ./42flows/1_Select.ts --outDir ./42flows/dist --onSuccess \"node ./42flows/dist/1_Select.js\""
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/ChadInside/test-tasks/issues"
   },
-  "homepage": "https://github.com/ChadInside/test-tasks#readme"
+  "homepage": "https://github.com/ChadInside/test-tasks#readme",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^6.0.0"
+  }
 }
